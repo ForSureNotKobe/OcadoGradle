@@ -3,9 +3,7 @@ import java.io.FileNotFoundException;
 import java.util.*;
 import java.lang.Double;
 
-public class ShoppingScanner {
-
-
+public class main {
     public static void main(String[] args) throws FileNotFoundException {
         List<Products> ListOfAll = new ArrayList<Products>();
         List<Bag> bags = new ArrayList<Bag>();
