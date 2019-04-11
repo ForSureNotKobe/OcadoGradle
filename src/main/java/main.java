@@ -4,8 +4,6 @@ import java.util.*;
 import java.lang.Double;
 
 public class main {
-    }
-
     public void BagCounter(List<Long> productsID) {
         if (ListOfAll == null || ListOfAll.size() == 0)
             throw new RuntimeException("There is no database loaded to compare products to");
@@ -30,4 +28,6 @@ public class main {
                     }
                 });
     }
+    }
+
 }
