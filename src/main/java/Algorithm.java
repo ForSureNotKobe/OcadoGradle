@@ -1,6 +1,10 @@
 import java.util.*;
 
 public class Algorithm {
+    private List<Products> ListOfAll = new ArrayList<Products>();
+    private List<Bag> bags = new ArrayList<Bag>();
+    private Bag bag = new Bag();
+    private int BagLoad = bag.getBagLoad();
 
     public void BagCounter(List<Long> productsID) {
         if (ListOfAll == null || ListOfAll.size() == 0)

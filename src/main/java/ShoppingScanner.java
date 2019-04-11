@@ -1,4 +1,5 @@
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -9,10 +10,15 @@ public class ShoppingScanner {
     private Bag bag = new Bag();
     private int BagLoad = bag.getBagLoad();
 
-    public void ScanProducts (){
+    public List<Products> ScanProducts (){
 
         double dbweight;
-        Scanner scanner = new Scanner(new File("/Users/jpore/Data/product_data.csv"));
+        Scanner scanner = null;
+        try {
+            scanner = new Scanner(new File("/Users/jpore/Data/product_data.csv"));
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
         scanner.useDelimiter(",");
         scanner.nextLine();                          //skipping first line of headears
         while (scanner.hasNext()) {
@@ -34,13 +40,13 @@ public class ShoppingScanner {
             ListOfAll.add(new Products(Integer.parseInt(id), name, intweight));
         }
         scanner.close();
-        return List<> ListOfAll;
+        return ListOfAll;
 
-        List<Long> productsID = new ArrayList<>();
+        /*List<Long> productsID = new ArrayList<>();
         productsID.add(73323011L);
         productsID.add(77760011L);
         productsID.add(94683011L);
         productsID.add(56966011L);
-        productsID.add(241566011L);
+        productsID.add(241566011L);*/
     }
 }
