@@ -8,8 +8,7 @@ public class Algorithm {
     private Bag bag = new Bag();
     private int BagLoad = bag.getBagLoad();
 
-    public List<Products> ScanProducts() {
-        String FileName = "/Users/jpore/Data/product_data.csv";
+    public List<Products> ScanProducts(String FileName) {
         double dbweight;
         Scanner scanner = null;
         try {
@@ -46,7 +45,8 @@ public class Algorithm {
     public void BagCounter(List<Long> productsID, int bagCapacity) {
         if (ListOfAll == null || ListOfAll.size() == 0)
             throw new RuntimeException("There is no database loaded to compare products to.");
-
+        if (productsID == null || productsID.size() == 0)
+            throw new RuntimeException("There are no products loaded to assign.");
         bags.add(new Bag());
         bags.get(0).setBagLoad(bagCapacity);
 
@@ -60,6 +60,7 @@ public class Algorithm {
                             .orElseThrow(() -> new RuntimeException("Product with ID = " + ID + " not found inside product list."));
 
                     for (int i = 0; i < bags.size(); i++) {
+                        bags.get(i).setBagLoad(bagCapacity);
                         if (bags.get(i).getBagLoad() >=
                                 bags.get(i).getWeightOfProductsInside() + currentProduct.getWeight()) {
 
@@ -67,7 +68,9 @@ public class Algorithm {
                             break;
                         } else if ((i+1) == bags.size()){
                             bags.add(new Bag());
-                            bags.get(i).setBagLoad(bagCapacity);
+                        } else if (bags.get(i).getBagLoad() < currentProduct.getWeight()){
+                            bags.get(i).addNewProduct(currentProduct);
+                            break;
                         }
                     }
                 });
@@ -76,8 +79,13 @@ public class Algorithm {
     public void printResults() {
         System.out.println("For this order, You should prepare " + bags.size() + " bags.");
         for (int i = 0; i < bags.size(); i++) {
-            System.out.println("Bag number " + (i+1) + " contain: \n" + bags.get(i).toString());
+            System.out.println("Bag number " + (i+1) + " should contain: \n" + bags.get(i).toString());
         }
     }
+
+    public long CheckBags() {
+        return bags.size();
+    }
+
 
 }

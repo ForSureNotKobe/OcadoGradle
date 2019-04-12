@@ -15,13 +15,16 @@ public class Bag {
     }
 
     public void setBagLoad(final int newBagLoad) {
-        if (newBagLoad <= 0) throw new IllegalArgumentException("Unable to init bag with nonpositive strength.");
+        if (newBagLoad <= 0){
+            throw new IllegalArgumentException("Unable to init bag with nonpositive strength.");
+            //wrongWeight() = true;
+        }
         this.BagLoad = newBagLoad;
     }
 
     public void addNewProduct(final Products newProduct) {
         if (newProduct.getWeight() > this.BagLoad)
-            throw new IllegalArgumentException("Product weight exceed bag strength.");
+            throw new IllegalArgumentException("Product weight exceed bag strength and cannot be packed.");
         prodInBag.add(newProduct);
     }
 
