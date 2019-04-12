@@ -5,10 +5,10 @@ w której torbie powinien znaleźć się każdy artykuł.
 
 Danymi wejściowymi są: wytrzymałość pojedynczej torby na zakupy oraz ID produktów które mają zostać spakowane.
 
-Po zbudowaniu projektu, należy w klasie "AppRunner" wprowadzić wybrane dane bagLoad --> wytrzymałość siatki,
+Do stworzenia projektu użyto IDE "IntelliJ IDEA". Po zbudowaniu projektu, należy w klasie "AppRunner" wprowadzić wybrane dane bagLoad --> wytrzymałość siatki,
 ID --> ID produktów do spakowania. Następnie uruchomić ww. klasę.
 
-W projekcie znajduje się seria testów jednostkowych, zawartych w klasie "AlgorithmTest".
+W projekcie znajduje się seria testów jednostkowych, zawartych w klasie "AlgorithmTest". Można je uruchomić, uruchamiając tą klasę.
 
 Aby kod mógł zostać wykorzystany w zewnętrznej aplikacji, zalecane będzie stworzenie funkcji, która dodatkowo zczytuje podane w pliku txt/cvs dane do kolejnych zamówień i je wydziela, tak by każde zamówienie było osobno obsługiwane. Jednocześnie powinna pytać o rodzaj/wytrzymałość użytych toreb.
 Kolejnym wymaganym elementem, będzie funkcja odpowiedzialna za dostarczenie ścieżki, do ww. pliku z którego będą zczytywane dane.
