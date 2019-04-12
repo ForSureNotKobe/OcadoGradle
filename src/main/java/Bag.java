@@ -3,11 +3,11 @@ import java.util.List;
 
 public class Bag {
     private static final int DEF_BAG_LOAD = 3000;
-    private int BagLoad;
+    private int BagLoad = DEF_BAG_LOAD;
     private List<Products> prodInBag = new ArrayList<Products>();
 
     public Bag() {
-        setBagLoad(DEF_BAG_LOAD);
+        setBagLoad(BagLoad);
     }
 
     public int getBagLoad() {
@@ -21,7 +21,7 @@ public class Bag {
 
     public void addNewProduct(final Products newProduct) {
         if (newProduct.getWeight() > this.BagLoad)
-            throw new IllegalArgumentException("Product weigh exceed bag strength.");
+            throw new IllegalArgumentException("Product weight exceed bag strength.");
         prodInBag.add(newProduct);
     }
 
