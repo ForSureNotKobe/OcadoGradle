@@ -10,7 +10,8 @@ ID --> ID produktów do spakowania. Następnie uruchomić ww. klasę.
 
 W projekcie znajduje się seria testów jednostkowych, zawartych w klasie "AlgorithmTest".
 
-
+Aby kod mógł zostać wykorzystany w zewnętrznej aplikacji, zalecane będzie stworzenie funkcji, która dodatkowo zczytuje podane w pliku txt/cvs dane do kolejnych zamówień i je wydziela, tak by każde zamówienie było osobno obsługiwane. Jednocześnie powinna pytać o rodzaj/wytrzymałość użytych toreb.
+Kolejnym wymaganym elementem, będzie funkcja odpowiedzialna za dostarczenie ścieżki, do ww. pliku z którego będą zczytywane dane.
 
 # Zadanie 2
 
